@@ -4,11 +4,13 @@
 
 Matias Canalicchio (matiascanalicchiofce@hotmail.com)
 
-Miguel Ortiz Molinuevo ()
+Miguel Ortiz Molinuevo (miguel._97@hotmail.com)
 
 ## Tematica
 
-Descripcion
+Esta es una pagina web deportiva, en la cual se podra buscar informacion acerca del deporte
+
+o jugador por su categoria y genero.
 
 ## DER
 
