@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 26-09-2023 a las 15:47:10
+-- Tiempo de generación: 25-09-2023 a las 21:29:34
 -- Versión del servidor: 10.4.28-MariaDB
 -- Versión de PHP: 8.2.4
 
@@ -29,18 +29,17 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `categoria` (
   `id` int(11) NOT NULL,
-  `deporte` varchar(50) NOT NULL,
-  `genero` varchar(50) NOT NULL
+  `deporte` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Volcado de datos para la tabla `categoria`
 --
 
-INSERT INTO `categoria` (`id`, `deporte`, `genero`) VALUES
-(2, 'futbol', 'masculino'),
-(3, 'tenis', 'masculino'),
-(4, 'tenis', 'femenino');
+INSERT INTO `categoria` (`id`, `deporte`) VALUES
+(1, 'futbol'),
+(2, 'tenis'),
+(3, 'voley');
 
 -- --------------------------------------------------------
 
@@ -51,19 +50,18 @@ INSERT INTO `categoria` (`id`, `deporte`, `genero`) VALUES
 CREATE TABLE `jugador` (
   `id` int(11) NOT NULL,
   `nombre` varchar(50) NOT NULL,
-  `nacionalidad` varchar(50) NOT NULL,
-  `id_categoria` int(11) NOT NULL
+  `id_categoria` int(11) DEFAULT NULL,
+  `nacionalidad` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Volcado de datos para la tabla `jugador`
 --
 
-INSERT INTO `jugador` (`id`, `nombre`, `nacionalidad`, `id_categoria`) VALUES
-(1, 'lionel messi', 'argentino', 2),
-(2, 'emiliano martinez', 'argentino', 2),
-(3, 'novak djokovic', 'serbio', 3),
-(4, 'venus williams', 'estadounidense', 4);
+INSERT INTO `jugador` (`id`, `nombre`, `id_categoria`, `nacionalidad`) VALUES
+(1, 'lionel messi', 1, 'argentino'),
+(2, 'emiliano martinez', 1, 'argentino'),
+(3, 'novak djokovic', 2, 'serbio');
 
 -- --------------------------------------------------------
 
@@ -76,13 +74,6 @@ CREATE TABLE `usuario` (
   `contrasenia` varchar(50) NOT NULL,
   `mail` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- Volcado de datos para la tabla `usuario`
---
-
-INSERT INTO `usuario` (`id`, `contrasenia`, `mail`) VALUES
-(1, 'admin@admin', 'admin');
 
 --
 -- Índices para tablas volcadas
@@ -99,7 +90,7 @@ ALTER TABLE `categoria`
 --
 ALTER TABLE `jugador`
   ADD PRIMARY KEY (`id`),
-  ADD KEY `FK_id_categoria` (`id_categoria`) USING BTREE;
+  ADD KEY `id_categoria` (`id_categoria`);
 
 --
 -- Indices de la tabla `usuario`
@@ -115,19 +106,19 @@ ALTER TABLE `usuario`
 -- AUTO_INCREMENT de la tabla `categoria`
 --
 ALTER TABLE `categoria`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT de la tabla `jugador`
 --
 ALTER TABLE `jugador`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT de la tabla `usuario`
 --
 ALTER TABLE `usuario`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- Restricciones para tablas volcadas

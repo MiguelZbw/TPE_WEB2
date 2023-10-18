@@ -2,15 +2,15 @@
 
 ## Alumnos
 
-Matías Canalicchio (matiascanalicchiofce@hotmail.com)
+Matias Canalicchio (matiascanalicchiofce@hotmail.com)
 
 Miguel Ortiz Molinuevo (miguel._97@hotmail.com)
 
 ## Tematica
 
-Esta es una página web deportiva, en la cual se podrá buscar información acerca del deporte
+Esta es una pagina web deportiva, en la cual se podra buscar informacion acerca del deporte
 
-o jugador por su categoría y género.
+o jugador por su categoria y genero.
 
 ## DER
 
